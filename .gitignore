@@ -1,0 +1,67 @@
+# Flutter related
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+.shard_tool/
+.flutter/
+
+# VS Code related
+.vscode/
+.idea/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Mac related
+.DS_Store
+
+# Android related
+*.jks
+build/
+*.gradle
+*.keystore
+gradle/
+local.properties
+
+# iOS related
+*.mode1v3
+*.mode2v3
+*.nib
+*.pbxuser
+*.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+build/
+Pods/
+.flutter-plugins
+Flutter/ephemeral/
+
+# Web related
+build/
+
+# Temporary files
+*.swp
+*.tmp
+*.temp
+*.log
+
+# Generated plugin registrant file
+generated_plugin_registrant.dart
+
+# Web related
+web/.dart_tool/
+web/.packages
+web/build/
+
+# Coverage
+coverage/
+
+# Android Studio related
+local.properties
