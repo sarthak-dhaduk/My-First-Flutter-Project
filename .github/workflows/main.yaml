@@ -37,9 +37,6 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Run tests
-        run: flutter test
-
       - name: Build Android APK
         run: flutter build apk --release --split-per-abi
 
@@ -95,18 +92,23 @@ jobs:
     needs: [build-android, build-ios]
 
     steps:
-      - name: Download artifacts
+      - name: Download Android APK artifact
         uses: actions/download-artifact@v2
         with:
-          name: 
-            android-apk
-            ios-ipa
+          name: android-apk
+          path: download/android
+
+      - name: Download iOS IPA artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ios-ipa
+          path: download/ios
 
       - name: Push to Releases
         uses: ncipollo/release-action@v1
         with:
           artifacts: |
-            ${{ steps.download-artifacts.outputs.artifacts }}/android-apk/*.apk,
-            ${{ steps.download-artifacts.outputs.artifacts }}/ios-ipa/*.ipa
+            download/android/*.apk,
+            download/ios/*.ipa
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}

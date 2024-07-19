@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext cosntext) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BMS(),
